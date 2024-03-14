@@ -1,7 +1,7 @@
 .appointment-scheduler {
   padding: 20px;
   backdrop-filter: blur(10px);
-  background: linear-gradient(to right, #ced1d6, #dbdee716);
+  background: linear-gradient(to right, #ECF2FF, #FBFCFF);
   font-family: Arial, sans-serif;
   height: 100vh;
 }
@@ -9,7 +9,7 @@
 h1 {
   text-align: center;
   color: #1A8EFD; /* Previous blue color */
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 }
 
 .appointments-container {
