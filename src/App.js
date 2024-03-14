@@ -6,7 +6,7 @@ import HomePage from './HomePage';
 import { app } from './FirebaseProvider';
 import SignupPage from './RegisterPage';
 import AllMedications from './AllMedications'; // Import the AllMedications component
-import MedicationReminderSetup from './MedicationReminderSetup';
+import MedicationReminderPage from './MedicationReminderPage';
 import HealthTrackingPage from './HealthTrackingPage';
 
 function App() {

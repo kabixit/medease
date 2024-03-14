@@ -43,18 +43,18 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <a href="#services" className="navbar-links">
-            Services
+          <a href="#medicationreminders" className="navbar-links">
+            Set Reminders
           </a>
         </li>
         <li>
           <a href="#about" className="navbar-links">
-            About
+            Medications
           </a>
         </li>
         <li>
           <a href="#reviews" className="navbar-links">
-            Reviews
+            Appointments
           </a>
         </li>
         <li>
