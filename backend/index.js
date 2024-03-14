@@ -1,9 +1,13 @@
+require('dotenv').config();
+
 const nodemailer = require('nodemailer');
 const schedule = require('node-schedule');
 const admin = require('firebase-admin');
 
+// Access the environment variable containing the JSON content
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
+
 // Initialize Firebase Admin SDK
-const serviceAccount = require('./medease1-firebase-adminsdk-kqel5-0b177758d9.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   projectId: 'medease1' // Replace 'your-project-id' with your Firebase project ID
@@ -56,6 +60,7 @@ function scheduleEmails(medicationSchedule) {
 
 // Function to fetch medication schedules from Firestore
 // Function to fetch medication schedules from Firestore
+// Function to fetch medication schedules from Firestore
 async function fetchMedicationSchedules() {
   try {
     // Fetch medication schedules collection from Firestore
@@ -68,15 +73,19 @@ async function fetchMedicationSchedules() {
     snapshot.forEach((doc) => {
       // Extract medication schedule data from Firestore document
       const data = doc.data();
-      
-      // Iterate over each reminder time in the array
-      data.reminderTimes.forEach((reminderTime) => {
-        // Split the reminder time into hours and minutes
-        const [hours, minutes] = reminderTime.split(':');
 
-        // Push medication schedule data to the array
+      // Check if reminderTimes is not already in the desired format
+      if (!Array.isArray(data.reminderTimes)) {
+        console.error('Invalid reminderTimes format:', data.reminderTimes);
+        return; // Skip this document
+      }
+
+      // Iterate through each time in the array
+      data.reminderTimes.forEach((time) => {
+        // Split time string into hours and minutes
+        const [hours, minutes] = time.split(':');
         medicationSchedule.push({
-          time: reminderTime,
+          time: `${hours}:${minutes}`,
           medicationName: data.medication,
           recipientEmail: data.userId,
         });
@@ -85,11 +94,11 @@ async function fetchMedicationSchedules() {
 
     // Schedule emails based on fetched medication schedules
     scheduleEmails(medicationSchedule);
-    console.log(medicationSchedule);
   } catch (error) {
     console.error('Error fetching medication schedules:', error);
   }
 }
+
 
 
 // Fetch medication schedules from Firestore and schedule emails
