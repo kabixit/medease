@@ -41,7 +41,7 @@ const Location = () => {
       console.log('Google Maps API loaded');
     };
     document.body.appendChild(script);
-
+      
     return () => {
       document.body.removeChild(script);
     };
