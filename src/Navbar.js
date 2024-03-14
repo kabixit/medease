@@ -48,8 +48,8 @@ function Navbar() {
           </Link>
         </li>
         <li>
-        <Link to="/doctors" className="navbar-links">
-            Doctors
+        <Link to="/dashboard" className="navbar-links">
+            Dashboard
           </Link>
         </li>
       </ul>
