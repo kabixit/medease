@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCommentDots,
-  faBars,
-  faXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./styles/Navbar.css";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const openNav = () => {
     setNav(!nav);
   };
 
+  const handleMouseEnter = () => {
+    setShowDropdown(true);
+  };
 
+  const handleMouseLeave = () => {
+    setShowDropdown(false);
+  };
 
   return (
     <div className="navbar-section">
       <h1 className="navbar-title">
-        <Link to="/home">
-          MedEase
-        </Link>
+        <Link to="/home">MedEase</Link>
       </h1>
 
       {/* Desktop */}
@@ -38,24 +39,38 @@ function Navbar() {
           </Link>
         </li>
         <li>
-        <Link to="/medications" className="navbar-links">
+          <Link to="/medications" className="navbar-links">
             Medications
           </Link>
         </li>
         <li>
-        <Link to="/appointment" className="navbar-links">
+          <Link to="/appointment" className="navbar-links">
             Appointments
           </Link>
         </li>
         <li>
-        <Link to="/dashboard" className="navbar-links">
+          <Link to="/dashboard" className="navbar-links">
             Dashboard
           </Link>
         </li>
         <li>
-        <Link to="/Healthtracker" className="navbar-links">
-        Healthtracker
-          </Link>
+          <div
+            className="dropdown"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button className="dropbtn">Family ⮟</button>
+            {showDropdown && (
+              <div className="dropdown-content">
+                <Link to="/healthtracker" className="nav-item">
+                  Add Family Members
+                </Link>
+                <Link to="/family" className="nav-item">
+                  Manage Family
+                </Link>
+              </div>
+            )}
+          </div>
         </li>
       </ul>
 
