@@ -58,8 +58,6 @@ body {
   transform: translateY(0);
 }
 
-<<<<<<< Updated upstream
-=======
 /* Responsive styles */
 @media screen and (max-width: 600px) {
   .medications-list {
@@ -79,4 +77,3 @@ body {
   }
 }
 
->>>>>>> Stashed changes
