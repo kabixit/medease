@@ -38,7 +38,7 @@ function Hero() {
         <div className="text-section">
           <p className="text-headline">❤️ Health comes first</p>
           <h2 className="text-title">
-          Empowering <span style={{color: 'blue'}}>Health,</span> Simplifying <span style={{color: 'blue'}}>Lives</span> Every Step of the <span style={{color: 'blue'}}>Way.</span>
+          Empowering <span style={{color: '#1a8efd'}}>Health,</span> Simplifying <span style={{color: '#1a8efd'}}>Lives</span> Every Step of the <span style={{color: '#1a8efd'}}>Way.</span>
           </h2>
           <p className="text-descritpion">
           We're dedicated to making your healthcare journey simpler and more convenient. Whether it's managing your medications, scheduling appointments, or connecting with healthcare providers, we're here to support you every step of the way.

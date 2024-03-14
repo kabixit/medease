@@ -64,14 +64,12 @@ function Navbar() {
         </li>
       </ul>
 
-      <button
+      <Link to="/Video"
         className="navbar-btn"
         type="button"
-        disabled={isButtonDisabled}
-        onClick={handleChatBtnClick}
       >
         <FontAwesomeIcon icon={faCommentDots} /> Live Chat
-      </button>
+        </Link>
 
       {/* Mobile */}
       <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>

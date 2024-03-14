@@ -8,6 +8,7 @@ import SignupPage from './RegisterPage';
 import AllMedications from './AllMedications'; // Import the AllMedications component
 import MedicationReminderPage from './MedicationReminderPage';
 import HealthTrackingPage from './HealthTrackingPage';
+import Videocall from './VideoCall';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -64,6 +65,7 @@ function App() {
         <Route path="medications" element={<AllMedications />} />
         <Route path="medicationsreminder" element={<MedicationReminderPage />} />
         <Route path="Healthtracker" element={<HealthTrackingPage />} />
+        <Route path="Video" element={<Videocall />}/>
       </Routes>
     </Router>
   );
