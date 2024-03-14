@@ -28,7 +28,7 @@ const Videocall = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="video-container">
         <AgoraUIKit rtcProps={rtcProps} />
       </div>
