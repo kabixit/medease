@@ -13,7 +13,7 @@ import Appointment from './Appointment';
 import VoiceCallPage from './VoiceCall';
 import EmergencyAssistance from './EmergencyAssistance';
 import Location from './Location';
-import FamilyProfilePage from './FamilyProfilePage';
+import FamilyCreatePage from './FamilyCreatePage';
 import Dashboard from './Dashboard';
 
 
@@ -78,7 +78,7 @@ function App() {
         <Route path='EmergencyAssistance' element={<EmergencyAssistance/>}/>
         <Route path='dashboard' element={<Dashboard/>}/>
         <Route path='Location' element={<Location/>}/>  
-        <Route path='Family' element={<FamilyProfilePage/>}/>
+        <Route path='FamilyCreate' element={<FamilyCreatePage/>}/>
         <Route path='dashboard' element={<Dashboard/>}/>
 
       </Routes>

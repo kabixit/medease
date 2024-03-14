@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Button, Heading, Input, Stack } from '@chakra-ui/react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from './FirebaseProvider'; // Assuming you have Firebase Firestore instance in FirebaseProvider
+import { db, auth } from './FirebaseProvider'; // Assuming you have Firebase Firestore instance and Firebase Authentication instance in FirebaseProvider
 
-const FamilyProfilePage = () => {
+const FamilyCreatePage = () => {
   const [familyName, setFamilyName] = useState('');
   const [familyMembers, setFamilyMembers] = useState([]);
 
@@ -19,8 +19,14 @@ const FamilyProfilePage = () => {
 
   const saveFamilyProfile = async () => {
     try {
+      const currentUser = auth.currentUser;
+      if (!currentUser || !familyName || familyMembers.length === 0) {
+        console.error('Invalid data for family profile');
+        return;
+      }
+
       const familyProfileCollection = collection(db, 'familyProfiles');
-      await addDoc(familyProfileCollection, { familyName, familyMembers });
+      await addDoc(familyProfileCollection, { userId: currentUser.email, familyName, familyMembers });
       // Reset state after saving
       setFamilyName('');
       setFamilyMembers([]);
@@ -30,8 +36,8 @@ const FamilyProfilePage = () => {
   };
 
   return (
-    <Box p={4}>
-      <Heading size="lg" mb={4}>Create Family Profile</Heading>
+    <Box p={8} maxWidth={600} margin="auto">
+      <Heading size="lg" mb={6}>Create Family Profile</Heading>
       <Input
         placeholder="Family Name"
         value={familyName}
@@ -39,7 +45,7 @@ const FamilyProfilePage = () => {
         mb={4}
       />
       {familyMembers.map((member, index) => (
-        <Stack key={index} direction="row" mb={2}>
+        <Stack key={index} direction="row" spacing={4} mb={4}>
           <Input
             placeholder="Name"
             value={member.name}
@@ -63,10 +69,10 @@ const FamilyProfilePage = () => {
           />
         </Stack>
       ))}
-      <Button colorScheme="blue" onClick={addFamilyMember} mb={4}>Add Family Member</Button>
-      <Button colorScheme="green" onClick={saveFamilyProfile}>Save Family Profile</Button>
+      <Button colorScheme="blue" onClick={addFamilyMember} mb={10} mr={10}>Add Family Member</Button>
+      <Button colorScheme="green" onClick={saveFamilyProfile} mb={10}>Save Family Profile</Button>
     </Box>
   );
 };
 
-export default FamilyProfilePage;
+export default FamilyCreatePage;
