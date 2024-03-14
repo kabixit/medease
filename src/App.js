@@ -10,6 +10,7 @@ import MedicationReminderPage from './MedicationReminderPage';
 import HealthTrackingPage from './HealthTrackingPage';
 import Videocall from './VideoCall';
 import Appointment from './Appointment';
+import VoiceCallPage from './VoiceCall';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -68,6 +69,7 @@ function App() {
         <Route path="Healthtracker" element={<HealthTrackingPage />} />
         <Route path="Video" element={<Videocall />}/>
         <Route path="appointment" element={<Appointment/>}/>
+        <Route path='VoiceCall' element={<VoiceCallPage/>}/>
       </Routes>
     </Router>
   );
