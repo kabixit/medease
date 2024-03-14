@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-solid-svg-icons';
 import BookedAppointments from './BookedAppointments'; // Import the BookedAppointments component
+<<<<<<< Updated upstream
 import './AppointmentScheduler.css';
+=======
+import './AppointmentScheduler.css'; // Import CSS for styling
+
+>>>>>>> Stashed changes
 import Navbar from './Navbar'; // Import CSS for styling
 import './AppointmentScheduler.css'; // Import CSS for styling
 import DoctorDetails from './DoctorDetails';
@@ -94,6 +99,7 @@ const Appointment = () => {
       )}
 
       <h1>Available Appointments</h1>
+      <h2>"Time is the most valuable thing we have, so schedule it wisely."</h2>
       <div className="appointments-container">
         {appointments.map((appointment) => (
           <div key={appointment.id} className="appointment-card">

@@ -30,6 +30,7 @@ const AllMedications = () => {
     <Navbar/>
     <div className="medications-container">
       <h1 className="medications-title">All Medications</h1>
+      <p className='p-div'>"Unlock your well-being with organized medication routines: Daily doses, daily victories."</p>
       <div className="medications-list">
         {medications.map((medication, index) => (
           <div key={index} className="medication-item">
