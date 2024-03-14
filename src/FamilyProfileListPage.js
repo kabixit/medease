@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db, auth } from './FirebaseProvider'; // Assuming you have Firebase Firestore instance and Firebase Authentication instance in FirebaseProvider
+import Navbar from './Navbar';
 
 const FamilyProfileListPage = ({ currentUser }) => {
   const [familyProfiles, setFamilyProfiles] = useState([]);
@@ -24,12 +25,14 @@ const FamilyProfileListPage = ({ currentUser }) => {
   }, [currentUser]);
 
   return (
+    <>
+    <Navbar/>
     <Box p={8} maxWidth={800} margin="auto">
       <Heading as="h1" size="xl" mb={6}>Family Profiles</Heading>
       {familyProfiles.length === 0 ? (
         <Text>No family profiles found.</Text>
       ) : (
-        <ul>
+       <>
           {familyProfiles.map((profile, index) => (
             <li key={index}>
               <Box mb={6}>
@@ -50,9 +53,10 @@ const FamilyProfileListPage = ({ currentUser }) => {
               </Box>
             </li>
           ))}
-        </ul>
+        </>
       )}
     </Box>
+    </>
   );
 };
 
