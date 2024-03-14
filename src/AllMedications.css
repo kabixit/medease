@@ -58,24 +58,3 @@ body {
   transform: translateY(0);
 }
 
-<<<<<<< Updated upstream
-/* Responsive styles */
-@media screen and (max-width: 600px) {
-  .medications-list {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 10px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .medications-title {
-    font-size: 24px;
-  }
-
-  .medication-item {
-    padding: 10px;
-  }
-}
-=======
->>>>>>> Stashed changes
