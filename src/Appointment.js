@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-solid-svg-icons';
 import BookedAppointments from './BookedAppointments'; // Import the BookedAppointments component
-import './AppointmentScheduler.css'; // Import CSS for styling
+import './AppointmentScheduler.css';
+import Navbar from './Navbar'; // Import CSS for styling
 
 // Sample images for doctors
 import doctor1Image from './images/doctor1.jpg';
@@ -76,6 +77,8 @@ const Appointment = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="appointment-scheduler">
       {/* FontAwesome icon for storing appointment details */}
       <div className="icon-container" onClick={toggleBookedAppointmentsModal}>
@@ -151,6 +154,7 @@ const Appointment = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
