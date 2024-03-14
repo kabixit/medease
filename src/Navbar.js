@@ -4,7 +4,7 @@ import './styles/Navbar.css';
 function Navbar({ isLoggedIn, onLogout }) {
   return (
 <div style={{ marginLeft: '40px', marginRight: '40px'}}>
-      <nav style={{ backgroundColor: 'transparent', color: '#ED6E12', padding: '10px', borderRadius: '16px' }}>
+      <nav style={{ backgroundColor: '#f5f8ff', color: '#ED6E12', borderRadius: '16px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src="logo.png" alt="Logo" style={{ marginRight: '10px', width: '30px', height: '30px' }} />
