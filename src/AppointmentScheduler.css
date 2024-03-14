@@ -12,6 +12,20 @@ h1 {
   margin-bottom: 36px;
 }
 
+.appointment-scheduler {
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #1A8EFD; /* Previous blue color */
+  margin-bottom: 36px;
+}
+
 .appointments-container {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +65,13 @@ h1 {
 }
 
 /* Responsive styles */
+@media (max-width: 1200px) {
+  .appointment-card {
+    flex: 0 0 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+  }
+}
+
 @media (max-width: 768px) {
   .appointment-card {
     flex: 0 0 calc(50% - 40px);
