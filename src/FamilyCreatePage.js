@@ -3,6 +3,7 @@ import { Box, Button, Heading, Input, Stack } from '@chakra-ui/react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db, auth } from './FirebaseProvider';
 import './FamilyCreatePage.css';
+import Navbar from './Navbar'
 
 const FamilyCreatePage = () => {
   const [familyName, setFamilyName] = useState('');
@@ -38,9 +39,10 @@ const FamilyCreatePage = () => {
 
   return (
     <div>
+      <Navbar/>
       <h1>Create Family Profile</h1>
-    <div className='main-div'>
-    <Box className="family-create-page">
+      <div className='main-div'>
+      <Box className="family-create-page">
       
       <Input
         placeholder="Family Name"
