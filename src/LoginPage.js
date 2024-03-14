@@ -65,7 +65,7 @@ function LoginPage({ auth, signInWithGoogle, signInWithFacebook }) {
         </div>
       </div>
       <div style={{ width: '66%' }}>
-        <img src='loginillustration.png' alt="Login Illustration" style={{ width: '100%', height: '99.5vh', objectFit: 'cover' }} />
+        <img src='DrawKit Vector Illustration Mental Health (3).png' alt="Login Illustration" style={{ width: '100%', height: '99.5vh', objectFit: 'cover' }} />
       </div>
     </div>
   );
