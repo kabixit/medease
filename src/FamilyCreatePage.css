@@ -1,0 +1,40 @@
+.family-create-page {
+   
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  transform: translateY(20px); /* Start with translateY 20px */
+  color: #333;
+  padding: 40px;
+  
+  }
+  
+  .family-create-page .heading {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .family-create-page .input {
+    margin-bottom: 16px;
+  }
+  
+  .family-create-page .stack {
+    margin-bottom: 16px;
+  }
+  
+  .family-create-page .button {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+  .main-div{
+    padding: 100px;
+    padding-top: 10px;
+  }
+  
+  .btn-div{
+    display: flex;
+    justify-content: center;
+  }

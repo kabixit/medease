@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-solid-svg-icons';
 import BookedAppointments from './BookedAppointments'; // Import the BookedAppointments component
+<<<<<<< Updated upstream
 import './AppointmentScheduler.css';
 import Navbar from './Navbar'; // Import CSS for styling
+=======
+import './AppointmentScheduler.css'; // Import CSS for styling
+import DoctorDetails from './DoctorDetails';
+>>>>>>> Stashed changes
 
 // Sample images for doctors
 import doctor1Image from './images/doctor1.jpg';

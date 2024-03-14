@@ -58,6 +58,7 @@ body {
   transform: translateY(0);
 }
 
+<<<<<<< Updated upstream
 /* Responsive styles */
 @media screen and (max-width: 600px) {
   .medications-list {
@@ -76,3 +77,5 @@ body {
     padding: 10px;
   }
 }
+=======
+>>>>>>> Stashed changes

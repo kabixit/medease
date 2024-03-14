@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Button, Heading, Input, Stack } from '@chakra-ui/react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db, auth } from './FirebaseProvider'; // Assuming you have Firebase Firestore instance and Firebase Authentication instance in FirebaseProvider
+import { db, auth } from './FirebaseProvider';
+import './FamilyCreatePage.css';
 
 const FamilyCreatePage = () => {
   const [familyName, setFamilyName] = useState('');
@@ -36,8 +37,11 @@ const FamilyCreatePage = () => {
   };
 
   return (
-    <Box p={8} maxWidth={600} margin="auto">
-      <Heading size="lg" mb={6}>Create Family Profile</Heading>
+    <div>
+      <h1>Create Family Profile</h1>
+    <div className='main-div'>
+    <Box className="family-create-page">
+      
       <Input
         placeholder="Family Name"
         value={familyName}
@@ -69,9 +73,13 @@ const FamilyCreatePage = () => {
           />
         </Stack>
       ))}
+      <div className='btn-div'>
       <Button colorScheme="blue" onClick={addFamilyMember} mb={10} mr={10}>Add Family Member</Button>
       <Button colorScheme="green" onClick={saveFamilyProfile} mb={10}>Save Family Profile</Button>
+      </div>
     </Box>
+    </div>
+    </div>
   );
 };
 
