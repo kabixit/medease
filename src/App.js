@@ -67,7 +67,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={user ? <HomePage user={user} signOut={signOut} /> : <Navigate to="/" />} />
+        <Route path="/home" element={user ? <HomePage user={user} /> : <Navigate to="/" />} />
         <Route path="/" element={<LoginPage auth={getAuth(app)} signInWithGoogle={signInWithGoogle} signInWithFacebook={signInWithFacebook} />} />
         <Route path="signup" element={<SignupPage auth={getAuth(app)} signInWithGoogle={signInWithGoogle} signInWithFacebook={signInWithFacebook} />} />
         <Route path="medications" element={<AllMedications />} />

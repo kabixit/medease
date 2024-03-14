@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <div className="navbar-section">
       <h1 className="navbar-title">
-        <Link to="/">
+        <Link to="/home">
           MedEase
         </Link>
       </h1>
@@ -28,7 +28,7 @@ function Navbar() {
       {/* Desktop */}
       <ul className="navbar-items">
         <li>
-          <Link to="/" className="navbar-links">
+          <Link to="/home" className="navbar-links">
             Home
           </Link>
         </li>
