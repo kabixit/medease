@@ -34,7 +34,7 @@ const HealthTrackingPage = () => {
         return;
       }
       // Create a new document in the 'basic_health' collection with the form data and user ID
-      await addDoc(collection(db, 'basic_health'), {
+      await addDoc(collection(db, 'health'), {
         userId: currentUser.email,
         weight,
         bloodPressure,
@@ -70,17 +70,18 @@ const HealthTrackingPage = () => {
       mood: [], // No validation for text input
       medication: [], // No validation for text input
     };
-
+  
     // Validate each input value against normal ranges
     for (const metric in normalRanges) {
       const [min, max] = normalRanges[metric];
-      const value = parseFloat(eval(metric));
+      const value = parseFloat(eval(metric)); // Avoid using eval
       if (isNaN(value) || value < min || value > max) {
         return false; // Invalid value
       }
     }
     return true; // All values are valid
   };
+  
 
   // Function to clear form fields
   const clearFormFields = () => {
