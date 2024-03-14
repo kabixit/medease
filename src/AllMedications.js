@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './FirebaseProvider';
-import { Box, Heading, Text, Wrap, WrapItem } from '@chakra-ui/react';
+import './AllMedications.css'; // Import the CSS file
 
 const AllMedications = () => {
   const [medications, setMedications] = useState([]);
@@ -25,20 +25,18 @@ const AllMedications = () => {
   }, []);
 
   return (
-    <Box maxW="800px" mx="auto" p="6">
-      <Heading as="h1" mb="6">All Medications</Heading>
-      <Wrap spacing="6">
+    <div className="medications-container">
+      <h1 className="medications-title">All Medications</h1>
+      <div className="medications-list">
         {medications.map((medication, index) => (
-          <WrapItem key={index} w="100%" md="calc(50% - 12px)">
-            <Box p="4" bg="white" boxShadow="md" borderRadius="md">
-              <Heading as="h2" size="md" mb="2">{medication.name}</Heading>
-              <Text><strong>Dosage:</strong> {medication.dosage}</Text>
-              <Text><strong>Frequency:</strong> {medication.frequency}</Text>
-            </Box>
-          </WrapItem>
+          <div key={index} className="medication-item">
+            <h2 className="medication-name">{medication.name}</h2>
+            <p><strong>Dosage:</strong> {medication.dosage}</p>
+            <p><strong>Frequency:</strong> {medication.frequency}</p>
+          </div>
         ))}
-      </Wrap>
-    </Box>
+      </div>
+    </div>
   );
 };
 
