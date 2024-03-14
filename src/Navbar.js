@@ -62,10 +62,10 @@ function Navbar() {
             Family ⮟
             {showDropdown && (
               <div className="dropdown-content">
-                <Link to="/healthtracker" className="nav-item">
+                <Link to="/familycreate" className="nav-item">
                   Add Family Members
                 </Link>
-                <Link to="/family" className="nav-item">
+                <Link to="/familyprofile" className="nav-item">
                   Manage Family
                 </Link>
               </div>

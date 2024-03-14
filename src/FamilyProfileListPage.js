@@ -1,28 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
-import './FamilyProfileListPage.css';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { db, auth } from './FirebaseProvider'; // Assuming you have Firebase Firestore instance and Firebase Authentication instance in FirebaseProvider
 
-const familyMembers = [
-  { name: 'John Doe', dob: '1990-05-15', gender: 'Male', relation: 'Father' },
-  { name: 'Jane Doe', dob: '1992-08-25', gender: 'Female', relation: 'Mother' },
-  { name: 'Alice Doe', dob: '2010-03-10', gender: 'Female', relation: 'Daughter' },
-  { name: 'Bob Doe', dob: '2015-11-20', gender: 'Male', relation: 'Son' },
-];
+const FamilyProfileListPage = ({ currentUser }) => {
+  const [familyProfiles, setFamilyProfiles] = useState([]);
 
+  useEffect(() => {
+    const fetchFamilyProfiles = async () => {
+      try {
+        const currentUser = auth.currentUser;
+        console.log(currentUser);
+        const familyProfilesCollection = collection(db, 'familyProfiles');
+        const q = query(familyProfilesCollection, where('userId', '==', currentUser.email));
+        const querySnapshot = await getDocs(q);
+        const fetchedFamilyProfiles = querySnapshot.docs.map(doc => doc.data());
+        setFamilyProfiles(fetchedFamilyProfiles);
+      } catch (error) {
+        console.error('Error fetching family profiles:', error);
+      }
+    };
+    fetchFamilyProfiles();
+  }, [currentUser]);
 
-const FamilyProfileListPage = () => {
   return (
-    <Box className="family-profile-container">
-      <h1 size="lg" mb={6}>Family Profile List</h1>
-      {familyMembers.map((member, index) => (
-        <Box key={index} className="member-card">
-          <Heading className="member-heading" size="md">Family Member {index + 1}</Heading>
-          <Text className="member-text">Name: {member.name}</Text>
-          <Text className="member-text">Date of Birth: {member.dob}</Text>
-          <Text className="member-text">Gender: {member.gender}</Text>
-          <Text className="member-text">Relationship: {member.relation}</Text>
-        </Box>
-      ))}
+    <Box p={8} maxWidth={800} margin="auto">
+      <Heading as="h1" size="xl" mb={6}>Family Profiles</Heading>
+      {familyProfiles.length === 0 ? (
+        <Text>No family profiles found.</Text>
+      ) : (
+        <ul>
+          {familyProfiles.map((profile, index) => (
+            <li key={index}>
+              <Box mb={6}>
+                <Heading as="h2" size="lg" mb={2}>{profile.familyName}</Heading>
+                <Text fontWeight="bold">Family Members:</Text>
+                <ul>
+                  {profile.familyMembers.map((member, i) => (
+                    <li key={i}>
+                      <Box mt={2}>
+                        <Text>{member.name}</Text>
+                        <Text>{member.dob}</Text>
+                        <Text>{member.gender}</Text>
+                        <Text>{member.relation}</Text>
+                      </Box>
+                    </li>
+                  ))}
+                </ul>
+              </Box>
+            </li>
+          ))}
+        </ul>
+      )}
     </Box>
   );
 };
