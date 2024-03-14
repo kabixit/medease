@@ -1,35 +1,39 @@
 .section-container1 {
-  display: flex;
-  flex-direction: column;
-  background-image: url('Login_dark.png');
-  background-size: cover;
-  background-position: center;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to right, #ECF2FF, #FBFCFF);
   height: 94.5vh;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
+  position: relative; /* Added position relative */
 }
 
 .section-title {
-  font-size: 24px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #2196f3; /* Blue color */
+  position: absolute; /* Added position absolute */
+  top: 10px; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
 }
-
-
 
 .section-hero {
   width: 100%;
   max-width: 400px;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-top: -40vh;
+  transition: transform 0.3s, box-shadow 0.3s; /* Added transition */
 }
 
-.glassmorphism {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.section-hero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
 
 .stack-container {
   display: flex;
@@ -37,14 +41,82 @@
   gap: 10px;
 }
 
-.select-box,
+.section-hero {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-top: -40vh;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section-hero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2196f3;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.select-box:hover {
+  border-color: #aaa;
+}
+
+.select-box:focus {
+  border-color: #2196f3;
+  outline: none;
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+.select-box::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .input-time {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
 }
+
+.input-time:hover {
+  border-color: #aaa;
+}
+
+.input-time:focus {
+  border-color: #2196f3;
+  outline: none;
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+
 
 .reminder-list {
   display: flex;
@@ -73,7 +145,7 @@
 }
 
 .add-reminder-button {
-  padding: 10px;
+  padding: 20px;
   border: none;
   background-color: #4caf50;
   color: white;

@@ -1,42 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+}
+
 .medications-container {
-  height: calc(100vh - 40px); /* Adjusted height to account for .medications-title */
+  height: calc(100vh - 40px);
   width: 100%;
   margin: auto;
   padding: 20px;
   text-align: center;
-  background-image: url('Login_dark.png');
-  background-size: cover; /* Cover the entire background */
-  background-position: center; /* Center the background image */
-  color: #fff; /* White font color */
-  font-family: Arial, sans-serif;
-  overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  color: #333;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: background-color 0.3s; /* Add transition for background color change */
 }
 
+.medications-container:hover {
+  background-color: rgba(236, 242, 255, 0.9); /* Slightly lighter shade on hover */
+}
 
 .medications-title {
   font-size: 36px;
   font-weight: bold;
-  color: #fff; /* White title color */
+  color: #1A8EFD; /* Updated color for heading text */
   margin-bottom: 20px;
-  margin-top: 20px; /* Separate title from card */
+  margin-top: 20px;
 }
 
 .medications-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Set a minimum width of 200px */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  max-width: 800px; /* Limit the maximum width of the grid */
-  margin: 0 auto; /* Center the grid horizontally */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .medication-item {
   padding: 20px;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.15); /* Glass morphism effect */
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  transform: translateY(20px); /* Start with translateY 20px */
+  color: #333;
 }
 
 .medication-item:hover {
@@ -44,71 +53,26 @@
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.medication-name {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff; /* White font color */
-  margin-bottom: 10px;
+.medication-item.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.medication-details {
-  font-size: 16px;
-  color: #ccc; /* Light gray font color */
-  margin-bottom: 10px;
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .medications-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
 }
 
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
+@media screen and (max-width: 400px) {
+  .medications-title {
+    font-size: 24px;
+  }
 
-.button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  .medication-item {
+    padding: 10px;
+  }
 }
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-/* Custom select style */
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.custom-select select {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: transparent;
-  appearance: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.custom-select::after {
-  content: '\25BC';
-  font-size: 14px;
-  color: #555;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Dashboard.css'; 
 import Chart from 'chart.js/auto'; // Import Chart.js
+import Navbar from './Navbar';
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -233,6 +234,8 @@ const Dashboard = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="dashboard">
       <h1>Welcome to Your Dashboard</h1>
       <div className="charts-container">
@@ -270,6 +273,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

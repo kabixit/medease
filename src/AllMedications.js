@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './FirebaseProvider';
-import './AllMedications.css'; // Import the CSS file
+import './AllMedications.css';
+import Navbar from './Navbar' // Import the CSS file
 
 const AllMedications = () => {
   const [medications, setMedications] = useState([]);
@@ -25,6 +26,8 @@ const AllMedications = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div className="medications-container">
       <h1 className="medications-title">All Medications</h1>
       <div className="medications-list">
@@ -37,6 +40,7 @@ const AllMedications = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

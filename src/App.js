@@ -13,7 +13,10 @@ import Appointment from './Appointment';
 import VoiceCallPage from './VoiceCall';
 import EmergencyAssistance from './EmergencyAssistance';
 import Location from './Location';
+import FamilyCreatePage from './FamilyCreatePage';
 import Dashboard from './Dashboard';
+import FamilyProfileListPage from './FamilyProfileListPage';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -76,6 +79,10 @@ function App() {
         <Route path='EmergencyAssistance' element={<EmergencyAssistance/>}/>
         <Route path='dashboard' element={<Dashboard/>}/>
         <Route path='Location' element={<Location/>}/>  
+        <Route path='FamilyCreate' element={<FamilyCreatePage/>}/>
+        <Route path='dashboard' element={<Dashboard/>}/>
+        <Route path='FamilyProfile' element={<FamilyProfileListPage/>}/>
+
       </Routes>
     </Router>
   );

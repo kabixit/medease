@@ -4,6 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db, auth } from './FirebaseProvider'; // Assuming you have Firebase auth in FirebaseProvider
 import './MedicationReminderPage.css'; // Import the CSS file
+import Navbar from './Navbar';
 
 const MedicationReminderPage = () => {
   const [medications, setMedications] = useState([]);
@@ -59,6 +60,8 @@ const MedicationReminderPage = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="section-container1">
       <h1 className="section-title">
         Set Medication Reminders
@@ -108,6 +111,7 @@ const MedicationReminderPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
