@@ -3,11 +3,25 @@ import { Box, Button, Heading, Input, Stack } from '@chakra-ui/react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db, auth } from './FirebaseProvider';
 import './FamilyCreatePage.css';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
 
 const FamilyCreatePage = () => {
   const [familyName, setFamilyName] = useState('');
   const [familyMembers, setFamilyMembers] = useState([]);
+  const [isMetaMaskConnected, setIsMetaMaskConnected] = useState(false);
+
+  const connectToMetaMask = async () => {
+    if (window.ethereum) {
+      try {
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        setIsMetaMaskConnected(true);
+      } catch (error) {
+        console.error('Error connecting to MetaMask:', error);
+      }
+    } else {
+      console.error('MetaMask extension not detected');
+    }
+  };
 
   const addFamilyMember = () => {
     setFamilyMembers([...familyMembers, { name: '', dob: '', gender: '', relation: '' }]);
@@ -39,48 +53,51 @@ const FamilyCreatePage = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <h1>Create Family Profile</h1>
       <div className='main-div'>
-      <Box className="family-create-page">
-      
-      <Input
-        placeholder="Family Name"
-        value={familyName}
-        onChange={(e) => setFamilyName(e.target.value)}
-        mb={4}
-      />
-      {familyMembers.map((member, index) => (
-        <Stack key={index} direction="row" spacing={4} mb={4}>
-          <Input
-            placeholder="Name"
-            value={member.name}
-            onChange={(e) => handleChange(index, 'name', e.target.value)}
-          />
-          <Input
-            type="date"
-            placeholder="Date of Birth"
-            value={member.dob}
-            onChange={(e) => handleChange(index, 'dob', e.target.value)}
-          />
-          <Input
-            placeholder="Gender"
-            value={member.gender}
-            onChange={(e) => handleChange(index, 'gender', e.target.value)}
-          />
-          <Input
-            placeholder="Relationship"
-            value={member.relation}
-            onChange={(e) => handleChange(index, 'relation', e.target.value)}
-          />
-        </Stack>
-      ))}
-      <div className='btn-div'>
-      <Button colorScheme="blue" onClick={addFamilyMember} mb={10} mr={10}>Add Family Member</Button>
-      <Button colorScheme="green" onClick={saveFamilyProfile} mb={10}>Save Family Profile</Button>
+        {isMetaMaskConnected ? (
+          <Box className="family-create-page">
+            <Input
+              placeholder="Family Name"
+              value={familyName}
+              onChange={(e) => setFamilyName(e.target.value)}
+              mb={4}
+            />
+            {familyMembers.map((member, index) => (
+              <Stack key={index} direction="row" spacing={4} mb={4}>
+                <Input
+                  placeholder="Name"
+                  value={member.name}
+                  onChange={(e) => handleChange(index, 'name', e.target.value)}
+                />
+                <Input
+                  type="date"
+                  placeholder="Date of Birth"
+                  value={member.dob}
+                  onChange={(e) => handleChange(index, 'dob', e.target.value)}
+                />
+                <Input
+                  placeholder="Gender"
+                  value={member.gender}
+                  onChange={(e) => handleChange(index, 'gender', e.target.value)}
+                />
+                <Input
+                  placeholder="Relationship"
+                  value={member.relation}
+                  onChange={(e) => handleChange(index, 'relation', e.target.value)}
+                />
+              </Stack>
+            ))}
+            <div className='btn-div'>
+              <Button colorScheme="blue" onClick={addFamilyMember} mb={10} mr={10}>Add Family Member</Button>
+              <Button colorScheme="green" onClick={saveFamilyProfile} mb={10}>Save Family Profile</Button>
+            </div>
+          </Box>
+        ) : (
+          <Button colorScheme="orange" onClick={connectToMetaMask}>Connect to MetaMask</Button>
+        )}
       </div>
-    </Box>
-    </div>
     </div>
   );
 };
