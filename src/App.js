@@ -67,7 +67,7 @@ function App() {
         <Route path="medicationsreminder" element={<MedicationReminderPage />} />
         <Route path="Healthtracker" element={<HealthTrackingPage />} />
         <Route path="Video" element={<Videocall />}/>
-        <Route path='/Appointment' element={<Appointment/>}/>
+        <Route path="appointment" element={<Appointment/>}/>
       </Routes>
     </Router>
   );
