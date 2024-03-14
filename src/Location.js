@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import "./Location.css"
-const Location = () => {
 
-  const [map, setMap] = useState(null);
+const Location = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -23,7 +21,6 @@ const Location = () => {
         map: googleMap,
         title: 'Your Location'
       });
-      setMap(googleMap);
       setError(null);
     };
 
@@ -37,7 +34,6 @@ const Location = () => {
       setError('Geolocation is not supported by this browser.');
     }
 
-    // Load Google Maps API script
     const script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyA0E_xu1VBpJ7gxVvfZ8bMXqmNe3advwes&libraries=places`;
     script.async = true;
@@ -45,18 +41,18 @@ const Location = () => {
       console.log('Google Maps API loaded');
     };
     document.body.appendChild(script);
+
     return () => {
-      // Clean up: remove the script from the DOM
       document.body.removeChild(script);
     };
   }, []);
+
   return (
-    <div  class="map-container">
+    <div className="map-container">
       <div className='head'>Location Tracker</div>
       {error && <p>Error: {error}</p>}
       <div id="map" className="map" style={{ width: '100%', height: '100vh' }}></div>
     </div>
-
   );
 };
 
