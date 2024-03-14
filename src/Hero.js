@@ -38,12 +38,10 @@ function Hero() {
         <div className="text-section">
           <p className="text-headline">❤️ Health comes first</p>
           <h2 className="text-title">
-            Find your Doctor and make an Appointments
+          Empowering <span style={{color: 'blue'}}>Health,</span> Simplifying <span style={{color: 'blue'}}>Lives</span> Every Step of the <span style={{color: 'blue'}}>Way.</span>
           </h2>
           <p className="text-descritpion">
-            Talk to online doctors and get medical advice, online prescriptions,
-            refills and medical notes within minutes. On-demand healthcare
-            services at your fingertips.
+          We're dedicated to making your healthcare journey simpler and more convenient. Whether it's managing your medications, scheduling appointments, or connecting with healthcare providers, we're here to support you every step of the way.
           </p>
           <button
             className="text-appointment-btn"
@@ -52,22 +50,6 @@ function Hero() {
           >
             <FontAwesomeIcon icon={faCalendarCheck} /> Book Appointment
           </button>
-          <div className="text-stats">
-            <div className="text-stats-container">
-              <p>145k+</p>
-              <p>Receive Patients</p>
-            </div>
-
-            <div className="text-stats-container">
-              <p>50+</p>
-              <p>Expert Doctors</p>
-            </div>
-
-            <div className="text-stats-container">
-              <p>10+</p>
-              <p>Years of Experience</p>
-            </div>
-          </div>
         </div>
 
         <div className="hero-image-section">

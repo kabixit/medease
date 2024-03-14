@@ -6,7 +6,8 @@ import HomePage from './HomePage';
 import { app } from './FirebaseProvider';
 import SignupPage from './RegisterPage';
 import AllMedications from './AllMedications'; // Import the AllMedications component
-import MedicationReminderPage from './MedicationReminderPage';
+import MedicationReminderSetup from './MedicationReminderSetup';
+import HealthTrackingPage from './HealthTrackingPage';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,6 +63,7 @@ function App() {
         <Route path="signup" element={<SignupPage auth={getAuth(app)} signInWithGoogle={signInWithGoogle} signInWithFacebook={signInWithFacebook} />} />
         <Route path="medications" element={<AllMedications />} />
         <Route path="medicationsreminder" element={<MedicationReminderPage />} />
+        <Route path="Healthtracker" element={<HealthTrackingPage />} />
       </Routes>
     </Router>
   );

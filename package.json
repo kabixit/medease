@@ -14,12 +14,14 @@
     "@testing-library/user-event": "^13.5.0",
     "agora-react-uikit": "^1.2.0",
     "agora-rtc-sdk": "^3.6.11",
+    "chart.js": "^3.7.0",
     "firebase": "^10.8.1",
     "framer-motion": "^11.0.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
