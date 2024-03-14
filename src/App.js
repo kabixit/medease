@@ -14,6 +14,8 @@ import VoiceCallPage from './VoiceCall';
 import EmergencyAssistance from './EmergencyAssistance';
 import Location from './Location';
 import FamilyProfilePage from './FamilyProfilePage';
+import Dashboard from './Dashboard';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -77,6 +79,8 @@ function App() {
         <Route path='dashboard' element={<Dashboard/>}/>
         <Route path='Location' element={<Location/>}/>  
         <Route path='Family' element={<FamilyProfilePage/>}/>
+        <Route path='dashboard' element={<Dashboard/>}/>
+
       </Routes>
     </Router>
   );
