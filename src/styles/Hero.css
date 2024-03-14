@@ -1,468 +1,150 @@
-@font-face {
-    font-family: 'Roboto';
-    src: url('../../public/fonts/Roboto-Bold.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto-Light';
-    src: url('../../public/fonts/Roboto-Light.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url('../../public/fonts/Poppins-Bold.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Poppins-Light';
-    src: url('../../public/fonts/Poppins-Light.ttf') format('truetype');
-  }
-.container {
-    background-image: url("../../public/herobackground.png");
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    height: 108vh;
-}
-.herotext1{
-    position: absolute;
-    top: 220px;
-    left: 194px;
-    font-family: 'Roboto';
-    font-size: 50px;
-}
-.orange{
-    color: orange;
-}
-.herotext2{
-    position: absolute;
-    top: 370px;
-    left: 194px;
-    width: 450px;
-    font-family: "Roboto-Light";
-    font-weight: 100;
-    font-size: 20px;
-}
-input{
-    font-family: "Roboto";
-}
-button{
-    font-family: "Roboto";    
-}
-.container1 {
+.hero-section {
     display: flex;
-    justify-content: space-between;
-    background-color: #4D2C5E;
-    padding: 20px;
-    width: 90%;
-    height: 20%;
-    border-radius: 14px;
-    margin: 0 auto;
-    margin-top: 600px;
-  }
-  
-  .layout {
-    padding: 10px;
-    width: 30%;
-    display: flex;
-  }
-  
-  .layout .content {
-    flex-grow: 1; /* Content takes up remaining space */
-    padding-right: 10px; /* Add spacing between image and content */
-  }
-  
-  .layout img {
-    max-width: 100%;
-  }
-  
-  .layout h2 {
-    margin-top: 0;
-    color: white;
-    font-family: "Roboto"; 
-    margin-left: 10px;
-    font-size: 25px;
-  }
-
-  .layout p {
-    color: rgba(255, 255, 255, 0.6);
-    font-family: "Roboto-Light"; 
-    margin-left: 10px;
-    font-size: 15px;
-  }
-  
-  .about-us-container {
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1000px; /* Adjust max-width as needed */
-    margin: 0 auto; /* Horizontally center the container */
-    padding: 20px;
+    gap: 24px;
+    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    height: 98vh;
 }
-
-.about-us-content {
-    width: 60%; /* Adjust width as needed */
+/* Text section */
+.text-section {
+    width: 60%;
+    padding: 0 32px;
 }
-
-.about-us-image {
+.text-headline {
+    margin-bottom: 12px;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: .7px;
+}
+.text-title {
+    width: 500px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+.text-descritpion {
+    width: 475px;
+    margin: 32px 0;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    letter-spacing: .7px;
+    line-height: 1.6rem;
+}
+.text-appointment-btn {
+    padding: 14px 20px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 28px;
+    outline: transparent;
+    background-color: #1A8EFD;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.text-appointment-btn:hover {
+    color: #1A8EFD;
+    background-color: transparent;
+    border: 1px solid #1A8EFD;
+}
+.text-stats {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 48px;
+}
+.text-stats-container {
+    text-align: center;
+}
+.text-stats-container > p {
+    color: rgb(77, 75, 75);
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    letter-spacing: .7px;
+}
+.text-stats-container p:first-child {
+    margin-bottom: 8px;
+    color: #1A8EFD;
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+/* Image section */
+.hero-image-section {
     width: 40%;
-    margin-left: 10%; /* Adjust width as needed */
-}
-
-.about-us-image img {
     max-width: 100%;
+    text-align: center;
+}
+.hero-image1 {
+    width: 100%;
     height: auto;
 }
-
-@media (max-width: 768px) {
-    .about-us-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-us-content,
-    .about-us-image {
-        width: 100%;
-        margin-bottom: 20px; /* Add space between content and image */
-    }
-}
-
-.about-us-content h2 {
-    font-family: "Poppins";
-}
-
-.about-us-content p {
-    font-family: "Roboto-Light";
-}
-
-/* Our Tracks section */
-.our-tracks-section {
-    padding: 40px;
-}
-
-/* Heading style */
-.our-tracks-section h2 {
+/* Scroll Btn */
+.scroll-up {
+    width: 45px;
+    height: 45px;
+    display: none;
+    align-items: center;
     text-align: center;
-    margin-bottom: 20px;
-    color: #333333;
-}
-
-/* Tracks container style */
-.tracks-container {
-    display: flex;
     justify-content: center;
-    flex-wrap: nowrap; /* Prevent wrapping to the next line */
-}
-
-/* Track card style */
-.track-card {
-    width: calc(23.333% - 20px); /* Adjust width to fit three cards in a row with space in between */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-}
-
-/* Track card image style */
-.track-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 5px;
-}
-
-/* Track card title style */
-.track-card h3 {
-    font-size: 15px;
-    margin-bottom: 4px;
-    color: #FF7426;
-    font-family: "Poppins";
-}
-
-.track-card h2 {
-    font-size: 20px;
-    color: #333333;
-    font-family: "Poppins";
-}
-
-/* Track card description style */
-.track-card p {
-    color: #666666;
-    line-height: 1.5;
-    margin-bottom: 5px;
-    font-family: "Poppins-Light";
-}
-
-/* Course details style */
-.course-details {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align items from the start */
-}
-
-.detail {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Adjust spacing between elements */
-}
-
-.detail img {
-    width: 19px;
-    height: 19px;
-    margin-right: 5px; /* Adjust spacing between icon and text */
-}
-
-.detail h5 {
-    margin: 0;
-    color: #333; /* Set color for text */
-}
-
-/* Clock icon style */
-.course-details i {
-    color: #333333;
-    margin-right: 5px;
-}
-
-/* Join course button style */
-.join-course-btn {
-    background-color: #ff7f00;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 96px;
+    color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: #1A8EFD;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 24px;
+    z-index: 20;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+}  
+.show-scroll {
+  display: flex;
 }
-
-/* Hover effect for the join course button */
-.join-course-btn:hover {
-    background-color: rgba(255, 123, 0, 0.649);
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .hero-image-section {
+        display: none;
+    }
+    .text-section {
+        width: 100%;
+        padding: 0;
+    }
+    .text-title, .text-descritpion {
+        width: 100%;
+    }
 }
-.joinbutton {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 10px;
-}
-.track-card h4{
-    font-family: "Poppins";
-}
-.track{
-    font-family: "Poppins";
-}
-.learning{
-    background-image: url("../../public/Section.png");
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    height: 80vh;
-}
-.learningtext{
-    padding-top: 90px;
-    padding-left: 800px;
-    font-family: "Poppins";
-    font-size: 35px;
-}
-.learningtext span{
-    color: #ff7f00;
-}
-.learningtext1{
-    padding-top: 20px;
-    padding-left: 800px;
-    height: 90px;
-    width: 90px;
-}
-.learningtext2{
-    padding-left: 800px;
-    height: 90px;
-    width: 90px;
-}
-.flex-text{
-    display: flex;
-    margin-bottom: 20px;
-}
-.text1{
-    padding-left: 25px;
-    padding-top: 10px;
-    font-family: "Poppins";
-    font-size: 20px;
-}
-.text2  {
-    padding-left: 25px;
-    font-family: "Poppins";
-    font-size: 20px;
-}
-.text3{
-    font-family: 'Poppins-Light';
-    font-size: 15px;
-    font-weight: 80;
-}
-.student-text {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .student-text h2{
-    font-family: "Poppins";
-    color: #050C26;
-  }
-
-  .student-text h3{
-    font-family: "Poppins-Light";
-    font-weight: 100;
-    color: #8A8A8A;
-    margin-top: -15px;
-  }
-
-  .card-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.card {
-    width: 200px;
-    height: 150px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Apply shadow effect */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 30px;
-    color: #ACACAC;
-}
-.card .content {
-    margin-bottom: 10px;
-}
-
-.image-container {
-    display: flex;
-}
-.image-container h2 {
-    font-size: 12px;
-    font-family: "Roboto-Light";
-    font-size: xx-small;
-    margin-left: 7px;
-    margin-top: 10px;
-}
-.image-container h2 span{
-    color: black;
-    font-family: "Roboto-Light";
-    font-size: small;
-}
-
-.faculty {
-    padding: 40px;
-}
-
-/* Heading style */
-.faculty h2 {
-    text-align: center;
-    color: #333333;
-}
-.faculty .track1 {
-    text-align: center;
-    color: #8A8A8A;
-    font-size: 15px;
-    font-family: "Poppins";
-}
-.detail1 {
-    position: absolute;
-    margin-left: 18%
-}
-.detail2 {
-    position: absolute;
-    margin-left: 20%
-}
-.subscribe{
-    background-image: url("../../public/subscribe.png");
-    height: 533px;
-    width: 1500px;
-}
-.subscribe h2{
-    font-family: "Poppins";
-    padding-top: 200px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 28px;
-}
-.subscribe h2 span{
-    font-size: 14px;
-    font-family: "Poppins-Light";
-    color: #ffffff;
-}
-/* Footer styles */
-footer {
-    background-color: #FDF8EE;
-    color: #fff;
-    padding: 50px 0;
-    margin-top: 100px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: black;
-}
-
-.footer-section {
-    flex: 1;
-    margin-bottom: 20px;
-}
-
-.footer-section h2 {
-    font-size: 1.5rem;
-    color: black;
-    margin-bottom: 15px;
-}
-
-.footer-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: black;
-}
-
-.contact span {
-    display: block;
-    margin-bottom: 10px;
-    color: black;
-}
-
-.socials a {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-right: 10px;
-    color: black;
-}
-
-.linkss ul {
-    list-style-type: none;
-    padding: 0;
-    color: black;
-}
-
-.linkss li {
-    margin-bottom: 10px;
-}
-
-.linkss a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    color: black;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: black;
-}
-
-.footer-bottom a {
-    color: #fff;
-    text-decoration: none;
-    color: black;
+@media screen and (max-width: 600px) {
+    .text-headline {
+        font-size: 20px;
+    }
+    .text-title {
+        font-size: 28px;
+    }
+    .text-descritpion {
+        font-size: 16px;
+    }
+    .text-appointment-btn {
+        font-size: 16px;
+    }
+    .text-stats {
+        gap: 18px;
+    }
+    .text-stats-container > p {
+        font-size: 16px;
+    }
+    .text-stats-container p:first-child {
+        font-size: 22px;
+    }
+    .scroll-up {
+        bottom: 32px;
+        right: 32px;
+    }
 }
