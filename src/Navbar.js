@@ -59,7 +59,7 @@ function Navbar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="dropbtn">Family ⮟</button>
+            Family ⮟
             {showDropdown && (
               <div className="dropdown-content">
                 <Link to="/healthtracker" className="nav-item">
