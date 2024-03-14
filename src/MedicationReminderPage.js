@@ -62,10 +62,14 @@ const MedicationReminderPage = () => {
   return (
     <>
     <Navbar/>
+    
     <div className="section-container1">
       <h1 className="section-title">
         Set Medication Reminders
       </h1>
+      <div className='quote-div'>
+        <p className="quote-text">"Your health is your wealth. Let reminders be your currency."</p>
+      </div>
       <div className="section-hero glassmorphism">
         <div className="stack-container">
           <select
