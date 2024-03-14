@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";
 import "./styles/Hero.css";
+import Navbar from "./Navbar";
 
 function Hero() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function Hero() {
         <div className="text-section">
           <p className="text-headline">❤️ Health comes first</p>
           <h2 className="text-title">
-            Find your Doctor and make an Appointments
+          Empowering <span style={{color: 'blue'}}>Health</span>, Simplifying Lives Every Step of the Way.
           </h2>
           <p className="text-descritpion">
             Talk to online doctors and get medical advice, online prescriptions,

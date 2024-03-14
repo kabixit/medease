@@ -1,27 +1,126 @@
-import React from 'react';
-import './styles/Navbar.css';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCommentDots,
+  faBars,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import "./styles/Navbar.css";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
-function Navbar({ isLoggedIn, onLogout }) {
+function Navbar() {
+  const [nav, setNav] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const openNav = () => {
+    setNav(!nav);
+  };
+
+  const handleChatBtnClick = () => {
+    if (!isButtonDisabled) {
+      toast.info("Experiencing high traffic, Please wait a moment.", {
+        position: toast.POSITION.TOP_CENTER,
+        onOpen: () => setIsButtonDisabled(true),
+        onClose: () => setIsButtonDisabled(false),
+      });
+    }
+  };
+
   return (
-<div style={{ marginLeft: '40px', marginRight: '40px'}}>
-      <nav style={{ backgroundColor: '#f5f8ff', color: '#ED6E12', borderRadius: '16px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="logo.png" alt="Logo" style={{ marginRight: '10px', width: '30px', height: '30px' }} />
-            <h1 className='Foodie'>Book Store</h1>
-          </div>
-          <div>
-              <div className='links'>
-                <a href="/" className='link'>Home</a>
-                <a href="#about" className='link'>About Us</a>                
-                <a href="/" className='link'>Courses</a>
-                <a href="/" className='link'>Faculty</a>
-                <a href="/" className='link'>Contact Us</a>
-                <a href="/" className='Signup'>Login</a>
-              </div>
-          </div>
+    <div className="navbar-section">
+      <h1 className="navbar-title">
+        <Link to="/">
+          Health <span className="navbar-sign">+</span>
+        </Link>
+      </h1>
+
+      {/* Desktop */}
+      <ul className="navbar-items">
+        <li>
+          <Link to="/" className="navbar-links">
+            Home
+          </Link>
+        </li>
+        <li>
+          <a href="#services" className="navbar-links">
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="#about" className="navbar-links">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#reviews" className="navbar-links">
+            Reviews
+          </a>
+        </li>
+        <li>
+          <a href="#doctors" className="navbar-links">
+            Doctors
+          </a>
+        </li>
+      </ul>
+
+      <button
+        className="navbar-btn"
+        type="button"
+        disabled={isButtonDisabled}
+        onClick={handleChatBtnClick}
+      >
+        <FontAwesomeIcon icon={faCommentDots} /> Live Chat
+      </button>
+
+      {/* Mobile */}
+      <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
+        <div onClick={openNav} className="mobile-navbar-close">
+          <FontAwesomeIcon icon={faXmark} className="hamb-icon" />
         </div>
-      </nav>
+
+        <ul className="mobile-navbar-links">
+          <li>
+            <Link onClick={openNav} to="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <a onClick={openNav} href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a onClick={openNav} href="#about">
+              About
+            </a>
+          </li>
+          <li>
+            <a onClick={openNav} href="#reviews">
+              Reviews
+            </a>
+          </li>
+          <li>
+            <a onClick={openNav} href="#doctors">
+              Doctors
+            </a>
+          </li>
+          <li>
+            <a onClick={openNav} href="#contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Hamburger Icon */}
+      <div className="mobile-nav">
+        <FontAwesomeIcon
+          icon={faBars}
+          onClick={openNav}
+          className="hamb-icon"
+        />
+      </div>
     </div>
   );
 }
