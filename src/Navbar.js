@@ -52,6 +52,11 @@ function Navbar() {
             Dashboard
           </Link>
         </li>
+        <li>
+        <Link to="/Healthtracker" className="navbar-links">
+        Healthtracker
+          </Link>
+        </li>
       </ul>
 
       <Link to="/Video"
@@ -68,37 +73,37 @@ function Navbar() {
         </div>
 
         <ul className="mobile-navbar-links">
-          <li>
-            <Link onClick={openNav} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <a onClick={openNav} href="#services">
-              Services
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#reviews">
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#doctors">
-              Doctors
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#contact">
-              Contact
-            </a>
-          </li>
-        </ul>
+        <li>
+          <Link to="/" className="navbar-links">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/medicationsreminder" className="navbar-links">
+            Set Reminders
+          </Link>
+        </li>
+        <li>
+        <Link to="/medications" className="navbar-links">
+            Medications
+          </Link>
+        </li>
+        <li>
+        <Link to="/appointment" className="navbar-links">
+            Appointments
+          </Link>
+        </li>
+        <li>
+        <Link to="/dashboard" className="navbar-links">
+            Dashboard
+          </Link>
+        </li>
+        <li>
+        <Link to="/Healthtracker" className="navbar-links">
+        Healthtracker
+          </Link>
+        </li>
+      </ul>
       </div>
 
       {/* Hamburger Icon */}
