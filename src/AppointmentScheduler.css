@@ -1,0 +1,154 @@
+.appointment-scheduler {
+    padding: 20px;
+  }
+  
+  .appointments-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .appointment-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .appointment-card p {
+    margin: 5px 0;
+  }
+  
+  .appointment-card button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .appointment-card {
+      flex: 0 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .appointment-card {
+      flex: 0 0 calc(100% - 20px);
+      max-width: calc(100% - 20px);
+    }
+  }
+
+
+  .icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .booking-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.8em;
+  }
+
+  .icon-container {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+  }
+  
+.appointment-info{
+    justify-content: center;
+    align-items: center;
+}  
+
+
+.appointment-card {
+    /* Other styles for appointment card */
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Arrange items vertically */
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  .appointment-info {
+    text-align: center; /* Center text */
+  }
+  
+  .appointment-info p {
+    margin: 5px 0; /* Adjust margin as needed */
+  }
+  
+  .appointment-info img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+  }
+  
+  .button-container {
+    display: flex;
+  }
+  
+  .book-button {
+    margin-right: 10px; /* Add margin between buttons */
+  }
+  
+  .view-details-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
