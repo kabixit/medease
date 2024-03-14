@@ -13,7 +13,7 @@ import Appointment from './Appointment';
 import VoiceCallPage from './VoiceCall';
 import EmergencyAssistance from './EmergencyAssistance';
 import Location from './Location';
-import Dashboard from './Dashboard';
+import FamilyProfilePage from './FamilyProfilePage';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -76,6 +76,7 @@ function App() {
         <Route path='EmergencyAssistance' element={<EmergencyAssistance/>}/>
         <Route path='dashboard' element={<Dashboard/>}/>
         <Route path='Location' element={<Location/>}/>  
+        <Route path='Family' element={<FamilyProfilePage/>}/>
       </Routes>
     </Router>
   );
