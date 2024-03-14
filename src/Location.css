@@ -1,7 +1,7 @@
 /* styles.css */
 .map-container {
     width: 100%;
-    height: 400px;
+    height: 100vh;
     position: relative;
     overflow: hidden;
   }
@@ -12,7 +12,4 @@
   }
 .head{
     text-align: center;
-
-    
-
 }  
