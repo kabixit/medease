@@ -1,8 +1,8 @@
 .dashboard {
   padding: 20px;
   height: 100vh;
-  background-color: #1e1e1e; /* Dark background color */
-  color: #fff; 
+  background-color: #f4f4f4; /* Light background color */
+  color: #333; /* Dark text color */
   font-family: 'Poppins', sans-serif;
 }
 
@@ -10,14 +10,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-}
-
-.chart-card {
-  background-color: rgba(142, 139, 139, 0.05); /* Transparent card background color */
   border-radius: 20px;
   padding: 20px;
   backdrop-filter: blur(20px); /* Add a blur effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.chart-card {
+  background-color: #fff; /* White card background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+
 }
 
 .chart-card h2 {
@@ -29,17 +33,16 @@ canvas {
   height: 200px;
 }
 
-/* Dark mode styles */
-.dark-mode {
-  background-color: #000; /* Very dark background color */
-  color: #fff; /* Light text color */
+.light-mode {
+  background-color: #fff; /* White background color */
+  color: #333; /* Dark text color */
 }
 
-.dark-mode .chart-card {
-  background-color: rgba(0, 0, 0, 0.2); /* Transparent card background color */
-  backdrop-filter: blur(10px); /* Add a blur effect */
+.light-mode .chart-card {
+  background-color: #fff; /* White card background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dark-mode canvas {
-  background-color: rgba(0, 0, 0, 0.2); /* Transparent canvas background color */
+.light-mode canvas {
+  background-color: #fff; /* White canvas background color */
 }
