@@ -18,13 +18,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
-<<<<<<< Updated upstream
     "react-scripts": "^3.0.1",
-=======
-    "react-scripts": "^5.0.1",
-    "react-toastify": "^10.0.4",
-    "twilio": "^5.0.0",
->>>>>>> Stashed changes
     "web-vitals": "^2.1.4"
   },
   "scripts": {
