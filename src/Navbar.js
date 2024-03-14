@@ -53,7 +53,7 @@ function Navbar() {
           </Link>
         </li>
         <li>
-        <Link to="/appointments" className="navbar-links">
+        <Link to="/appointment" className="navbar-links">
             Appointments
           </Link>
         </li>
