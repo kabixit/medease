@@ -1,0 +1,22 @@
+.emergency-assistance-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sos-button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sos-button:hover {
+    transform: scale(1.1);
+}

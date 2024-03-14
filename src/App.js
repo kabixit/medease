@@ -10,7 +10,12 @@ import MedicationReminderPage from './MedicationReminderPage';
 import HealthTrackingPage from './HealthTrackingPage';
 import Videocall from './VideoCall';
 import Appointment from './Appointment';
+<<<<<<< Updated upstream
 import VoiceCallPage from './VoiceCall';
+=======
+import EmergencyAssistance from './EmergencyAssistance';
+import Location from './Location';
+>>>>>>> Stashed changes
 
 function App() {
   const [user, setUser] = useState(null);
@@ -69,7 +74,12 @@ function App() {
         <Route path="Healthtracker" element={<HealthTrackingPage />} />
         <Route path="Video" element={<Videocall />}/>
         <Route path="appointment" element={<Appointment/>}/>
+<<<<<<< Updated upstream
         <Route path='VoiceCall' element={<VoiceCallPage/>}/>
+=======
+        <Route path="EmergencyAssistance" element={<EmergencyAssistance/>}/>
+        <Route path="Location" element={<Location/>}/>
+>>>>>>> Stashed changes
       </Routes>
     </Router>
   );
