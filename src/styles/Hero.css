@@ -4,6 +4,7 @@
     align-items: center;
     gap: 24px;
     background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    height: 98vh;
 }
 /* Text section */
 .text-section {
