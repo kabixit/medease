@@ -5,7 +5,7 @@ import BookedAppointments from './BookedAppointments'; // Import the BookedAppoi
 import './AppointmentScheduler.css'; // Import CSS for styling
 
 import Navbar from './Navbar'; // Import CSS for styling
-import './AppointmentScheduler.css'; // Import CSS for styling
+ // Import CSS for styling
 import DoctorDetails from './DoctorDetails';
 
 // Sample images for doctors
